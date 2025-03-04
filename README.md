@@ -25,7 +25,7 @@ Berikut adalah tabel yang merangkum kebutuhan fungsional aplikasi:
 | _Dashboard_ & Laporan            | - Admin dan pimpinan dapat melihat statistik mahasiswa, progres akademik, dan laporan evaluasi.                             |         |
 | Notifikasi & Pengumuman          | - Sistem dapat mengirimkan notifikasi tugas, _deadline_, atau perubahan jadwal.                                             |         |
 | Login & Akses Berbasis _Role_    | - Mahasiswa, dosen, admin, dan rumah sakit memiliki hak akses berbeda.                                                      |   ✅   |
-| Integrasi dengan Sistem Akademik | - Data nilai, jadwal, dan status akademik dapat terhubung dengan sistem kampus.                                             |  ❌    |
+| Penjadwalan dinas mahasiswa      | - Penjadwalan akan dilakukan oleh mitra                                                                                     |        |
 | Chat atau Forum Diskusi          | - Mahasiswa, dosen, dan instruktur dapat berkomunikasi dalam sistem.                                                        |         |
 
 **Keterangan Kolom "Selesai":**
