@@ -15,18 +15,20 @@ Aplikasi ini dirancang untuk memfasilitasi pengelolaan kegiatan akademik dan pra
 
 Berikut adalah tabel yang merangkum kebutuhan fungsional aplikasi:
 
-| Fitur                            | Deskripsi                                                                                                                   | Selesai |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------- |
-| Manajemen Pengguna               | - Admin dapat menambahkan/mengelola akun mahasiswa, dosen, instruktur, dan rumah sakit mitra.                               |         |
-| Manajemen Materi & Modul         | - Dosen dapat mengunggah materi pembelajaran (dokumen, video, PDF). - Mahasiswa dapat mengakses dan mengunduh materi.       |         |
-| Jurnal & Laporan Praktik         | - Mahasiswa dapat mengisi jurnal praktik. - Instruktur & dosen dapat memberikan penilaian & komentar.                       |         |
-| Penilaian & Evaluasi             | - Dosen dapat memberikan nilai terhadap tugas & laporan praktik. - Mahasiswa dapat melihat hasil evaluasi & _feedback_.     |         |
-| Manajemen Magang Klinik          | - Admin dapat mengelola data mahasiswa yang magang di rumah sakit/puskesmas mitra. - Rumah sakit dapat memberikan evaluasi. |         |
-| _Dashboard_ & Laporan            | - Admin dan pimpinan dapat melihat statistik mahasiswa, progres akademik, dan laporan evaluasi.                             |         |
-| Notifikasi & Pengumuman          | - Sistem dapat mengirimkan notifikasi tugas, _deadline_, atau perubahan jadwal.                                             |         |
-| Login & Akses Berbasis _Role_    | - Mahasiswa, dosen, admin, dan rumah sakit memiliki hak akses berbeda.                                                      |   ✅   |
-| Penjadwalan dinas mahasiswa      | - Penjadwalan akan dilakukan oleh mitra                                                                                     |        |
-| Chat atau Forum Diskusi          | - Mahasiswa, dosen, dan instruktur dapat berkomunikasi dalam sistem.                                                        |         |
+| Fitur                                | Deskripsi                                                                 | Selesai |
+|--------------------------------------|---------------------------------------------------------------------------|---------|
+| Manajemen Pengguna                   | - Admin dapat menambahkan/mengelola akun mahasiswa, dosen, instruktur, dan rumah sakit mitra. |         |
+| Manajemen Kelas & Pembimbing         | - Setiap mahasiswa memiliki Dosen Pembimbing Akademik & Dosen Pembimbing Lapangan. <br> - Setiap dosen membimbing banyak mahasiswa di berbagai mitra. |         |
+| Manajemen Materi & Modul             | - Dosen dapat mengunggah materi pembelajaran (dokumen, video, PDF). <br> - Mahasiswa dapat mengakses dan mengunduh materi. |         |
+| Manajemen Jurnal & Laporan Praktik   | - Mahasiswa dapat mengisi jurnal praktik harian berdasarkan shift kerja di rumah sakit/puskesmas. <br> - Dosen & instruktur klinik dapat memberikan komentar dan evaluasi. |         |
+| Penilaian & Evaluasi                 | - Dosen & instruktur klinik dapat memberikan nilai berdasarkan laporan mahasiswa. <br> - Mahasiswa dapat melihat hasil evaluasi dan feedback. |         |
+| Manajemen Magang Klinik              | - Admin dapat mengelola data mahasiswa magang di berbagai rumah sakit/puskesmas. <br> - Rumah sakit dapat memberikan evaluasi terhadap mahasiswa. |         |
+| Dashboard & Laporan                  | - Admin dan pimpinan fakultas dapat melihat statistik mahasiswa, progres akademik, dan laporan evaluasi magang. |         |
+| Notifikasi & Pengumuman              | - Sistem dapat mengirimkan notifikasi tugas, deadline, atau perubahan jadwal praktik. |         |
+| Login & Akses Berbasis Role          | - Mahasiswa, dosen, admin, dan rumah sakit memiliki hak akses berbeda. | ✅       |
+| Penjadwalan Dinas Mahasiswa          | - Rumah sakit/puskesmas dapat menentukan jadwal dinas mahasiswa. <br> - Mahasiswa dapat melihat jadwal kerja mereka. |         |
+| Chat atau Forum Diskusi              | - Mahasiswa, dosen, dan instruktur dapat berkomunikasi melalui sistem untuk diskusi atau konsultasi. |         |
+
 
 **Keterangan Kolom "Selesai":**
 
