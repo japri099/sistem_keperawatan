@@ -17,7 +17,7 @@ Berikut adalah tabel yang merangkum kebutuhan fungsional aplikasi:
 
 | Fitur                                | Deskripsi                                                                 | Selesai |
 |--------------------------------------|---------------------------------------------------------------------------|---------|
-| Manajemen Pengguna                   | - Admin dapat menambahkan/mengelola akun mahasiswa, dosen, instruktur, dan rumah sakit mitra. |         |
+| Manajemen Pengguna                   | - Admin dapat menambahkan/mengelola akun mahasiswa, dosen, instruktur, dan rumah sakit mitra. |   ✅      |
 | Manajemen Kelas & Pembimbing         | - Setiap mahasiswa memiliki Dosen Pembimbing Akademik & Dosen Pembimbing Lapangan. <br> - Setiap dosen membimbing banyak mahasiswa di berbagai mitra. |         |
 | Manajemen Materi & Modul             | - Dosen dapat mengunggah materi pembelajaran (dokumen, video, PDF). <br> - Mahasiswa dapat mengakses dan mengunduh materi. |         |
 | Manajemen Jurnal & Laporan Praktik   | - Mahasiswa dapat mengisi jurnal praktik harian berdasarkan shift kerja di rumah sakit/puskesmas. <br> - Dosen & instruktur klinik dapat memberikan komentar dan evaluasi. |         |
