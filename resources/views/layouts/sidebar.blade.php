@@ -8,6 +8,9 @@
             <a href="{{ route('admin_fakultas.user.index') }}" class="hover:text-gray-300">Kelola User</a>
         </li>
         <li class="py-2">
+            <a href="{{ route('admin_fakultas.kelas.index') }}" class="hover:text-gray-300">Kelola Kelas</a>
+        </li>
+        <li class="py-2">
             <form action="{{ route('logout') }}" method="POST">
             @csrf
                 <button type="submit" class="text-red-400 hover:text-red-600">

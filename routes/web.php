@@ -58,6 +58,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/admin_fakultas/user/{username}', [AdminFakultasController::class, 'update'])->name('admin_fakultas.user.update');
     Route::delete('/admin_fakultas/user/{username}', [AdminFakultasController::class, 'destroy'])->name('admin_fakultas.user.destroy');
     Route::post('/admin_fakultas/user/import', [AdminFakultasController::class, 'importExcel'])->name('admin_fakultas.user.import');
+    Route::get('/admin_fakultas/kelas', [AdminFakultasController::class, 'kelasIndex'])->name('admin_fakultas.kelas.index');
+    Route::post('/admin_fakultas/kelas', [AdminFakultasController::class, 'kelasStore'])->name('admin_fakultas.kelas.store');
+    Route::put('/admin_fakultas/kelas/{kode_kelas}', [AdminFakultasController::class, 'kelasUpdate'])->name('admin_fakultas.kelas.update');
+    Route::delete('/admin_fakultas/kelas/{kode_kelas}', [AdminFakultasController::class, 'kelasDestroy'])->name('admin_fakultas.kelas.destroy');
 
 
     // pimpinan
