@@ -210,7 +210,6 @@
 
             deleteUrl(kode) {
                 return `/admin_fakultas/kelas/${kode}`;
-                // Atau pakai route helper kalo mau
                 // return `{{ url('admin_fakultas/kelas') }}/${kode}`;
             }
         }

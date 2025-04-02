@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Kelas;
+use App\Models\MataKuliah;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UserImport;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AdminFakultasController extends Controller
 {
@@ -176,6 +178,109 @@ class AdminFakultasController extends Controller
         $kelas->delete();
 
         return redirect()->route('admin_fakultas.kelas.index')->with('success', 'Kelas berhasil dihapus');
+    }
+
+    public function mataKuliahIndex(Request $request)
+    {
+        $search = $request->query('search');
+        $mataKuliah = MataKuliah::query();
+        if ($search) {
+            $mataKuliah->where('nama_mk', 'LIKE', "%$search%")
+            ->orWhere('kode_mk', 'LIKE', "%$search%");
+        }
+
+        $mataKuliah = $mataKuliah->get();
+        $kelas = Kelas::all();
+        $dosen = User::where('role', 'dosen')->get(); // Hanya dosen yang tampil
+
+        return view('admin_fakultas.modul_mata_kuliah', compact('mataKuliah', 'kelas', 'dosen'));
+    }
+
+    // Fungsi untuk membuat singkatan kode mata kuliah
+    private function generateKodeMK($nama_mk)
+    {
+        $words = explode(' ', strtolower($nama_mk));
+
+        if (count($words) > 1) {
+            $singkatan = '';
+            foreach ($words as $word) {
+                $singkatan .= substr($word, 0, 2); // Ambil 2 huruf pertama tiap kata
+                }
+            } else {
+                $singkatan = substr($words[0], 0, 4); // Jika hanya satu kata, ambil 4 huruf pertama
+                }
+
+                // Pastikan kode unik
+                $counter = 1;
+                $kode_mk = strtoupper($singkatan);
+                while (MataKuliah::where('kode_mk', $kode_mk)->exists()) {
+                    $kode_mk = strtoupper($singkatan) . $counter;
+                    $counter++;
+                }
+
+                return $kode_mk;
+    }
+
+    // Menyimpan mata kuliah baru
+    public function mataKuliahStore(Request $request)
+    {
+        $request->validate([
+            'kode_kelas' => 'required|exists:kelas,kode_kelas',
+            'username' => 'required|exists:users,username',
+            'nama_mk' => 'required'
+        ]);
+
+        $kode_mk = $this->generateKodeMK($request->nama_mk);
+
+        MataKuliah::create([
+            'kode_mk' => $kode_mk,
+            'kode_kelas' => $request->kode_kelas,
+            'username' => $request->username,
+            'nama_mk' => $request->nama_mk
+        ]);
+
+        return redirect()->route('admin_fakultas.mata_kuliah.index')->with('success', 'Mata kuliah berhasil ditambahkan');
+    }
+
+
+    // Mengupdate mata kuliah
+    public function mataKuliahUpdate(Request $request, $kode_mk)
+    {
+        $mataKuliah = MataKuliah::where('kode_mk', $kode_mk)->firstOrFail();
+
+        $request->validate([
+            'kode_kelas' => 'required|exists:kelas,kode_kelas',
+            'username' => 'required|exists:users,username',
+            'nama_mk' => 'required'
+        ]);
+
+        // Jika nama berubah, generate kode baru
+        if ($request->nama_mk !== $mataKuliah->nama_mk) {
+            $kode_mk_baru = $this->generateKodeMK($request->nama_mk);
+        } else {
+            $kode_mk_baru = $mataKuliah->kode_mk;
+        }
+
+        // Update data
+        $mataKuliah->update([
+            'kode_mk' => $kode_mk_baru,
+            'kode_kelas' => $request->kode_kelas,
+            'username' => $request->username,
+            'nama_mk' => $request->nama_mk
+        ]);
+
+        return redirect()->route('admin_fakultas.mata_kuliah.index')->with('success', 'Mata kuliah berhasil diperbarui');
+    }
+
+
+
+    // Menghapus mata kuliah
+    public function mataKuliahDestroy($kode_mk)
+    {
+        $mataKuliah = MataKuliah::where('kode_mk', $kode_mk)->firstOrFail();
+        $mataKuliah->delete();
+
+        return redirect()->route('admin_fakultas.mata_kuliah.index')->with('success', 'Mata kuliah berhasil dihapus');
     }
 
 }

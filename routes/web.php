@@ -62,6 +62,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin_fakultas/kelas', [AdminFakultasController::class, 'kelasStore'])->name('admin_fakultas.kelas.store');
     Route::put('/admin_fakultas/kelas/{kode_kelas}', [AdminFakultasController::class, 'kelasUpdate'])->name('admin_fakultas.kelas.update');
     Route::delete('/admin_fakultas/kelas/{kode_kelas}', [AdminFakultasController::class, 'kelasDestroy'])->name('admin_fakultas.kelas.destroy');
+    Route::get('/admin_fakultas/mata_kuliah', [AdminFakultasController::class, 'mataKuliahIndex'])->name('admin_fakultas.mata_kuliah.index');
+    Route::post('/admin_fakultas/mata_kuliah', [AdminFakultasController::class, 'mataKuliahStore'])->name('admin_fakultas.mata_kuliah.store');
+    Route::put('/admin_fakultas/mata_kuliah/{kode_mk}', [AdminFakultasController::class, 'mataKuliahUpdate'])->name('admin_fakultas.mata_kuliah.update');
+    Route::delete('/admin_fakultas/mata_kuliah/{kode_mk}', [AdminFakultasController::class, 'mataKuliahDestroy'])->name('admin_fakultas.mata_kuliah.destroy');
+
 
 
     // pimpinan
